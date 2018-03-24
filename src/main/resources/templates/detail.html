@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+    <link rel="stylesheet" href="../static/css/styly.css" th:href="@{/css/styly.css}"/>
+
+</head>
+<body>
+    <h1>Detail</h1>
+
+    <table class="tabulka">
+        <tr>
+            <th>ID</th>
+            <th>Jméno</th>
+            <th>Příjmení</th>
+            <th>Stat</th>
+            <th>Mesto</th>
+            <th>Telefon</th>
+        </tr>
+
+        <tr th:each="jedenKontakt : ${seznamKontaktu}">
+            <td th:text = "${jedenKontakt.id}">200</td>
+            <td th:text = "${jedenKontakt.jmeno}">Jana</td>
+            <td th:text = "${jedenKontakt.prijmeni}">Malá</td>
+            <td th:text = "${jedenKontakt.stat}">Polsko</td>
+            <td th:text = "${jedenKontakt.mesto}">Mesto</td>
+            <td th:text = "${jedenKontakt.telefonniCislo}">+420 557 589 624</td>
+
+        </tr>
+    </table>
+
+</body>
+</html>

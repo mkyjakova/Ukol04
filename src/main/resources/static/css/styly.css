@@ -1,0 +1,100 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One&subset=latin-ext');
+@font-face { font-family: Anders; src: url('../fonts/Anders.ttf')format("opentype");  }
+
+
+/* box model */
+html { box-sizing: border-box; }
+*, *:after, *:before { box-sizing: border-box;}
+
+body {
+	padding: 10px 50px;
+	background: bisque url('../images/pozadi.jpg');
+	background-repeat: repeat;
+	color: black;
+	min-height: 100vh;
+	margin: 0 auto;
+
+}
+
+h1 {
+	margin: 50px 0;
+	font: 60px/1 'Anders', sans-serif;
+	text-align: center;
+	color: forestgreen;
+	text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/*pexeso*/
+.pexeso {
+	width: 540px;
+	margin: 50px auto;
+	display: grid;
+	grid-template-columns: repeat(4, 120px);
+	grid-gap: 20px;
+}
+
+.pexeso > * {
+	border: 3px solid rgba(255, 255, 255, 0.6);
+	border-radius: 6px;
+	box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+	transition: all 0.2s;
+}
+
+.pexeso > *:nth-child(6n+1) { transform: rotate(-2deg); }
+.pexeso > *:nth-child(6n+2) { transform: rotate(3deg); }
+.pexeso > *:nth-child(6n+3) { transform: rotate(-4deg); }
+.pexeso > *:nth-child(6n+4) { transform: rotate(2deg); }
+.pexeso > *:nth-child(6n+5) { transform: rotate(1deg); }
+.pexeso > *:nth-child(6n+6) { transform: rotate(-4deg); }
+
+.pexeso > *:hover {
+	transform: translate(-2px, -2px) scale(1.1);
+	box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
+.pexeso img {
+	display: block;
+	width: 100%;
+}
+/*tabulka*/
+.tabulka {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+	text-align: center;
+	border: 3px solid forestgreen;
+	border-radius: 20px;
+
+}
+
+.tabulka tr th {
+	background-color: rgba(255,204,184,0.7);
+	color: forestgreen;
+	border-radius: 20px;
+}
+.tabulka tr td{
+	border-radius: 20px;
+	background-color: rgba(245,245,220,0.5);
+}
+
+.tabulka tr th:nth-child(1) {
+	width: 15%;
+}
+.tabulka tr th:nth-child(2) {
+	width: 15%;
+}
+.tabulka tr th:nth-child(3) {
+	width: 10%;
+}
+.tabulka tr th:nth-child(4) {
+	width: 10%;
+}
+.tabulka tr th:nth-child(5) {
+	width: 10%;
+}
+.tabulka tr th:nth-child(6) {
+	width: 15%;
+}
+
+
