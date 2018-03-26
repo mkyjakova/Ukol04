@@ -12,11 +12,11 @@
     <table class="tabulka">
         <tr>
             <th>ID</th>
-            <th>Jméno</th>
-            <th>Příjmení</th>
-            <th>Stat</th>
-            <th>Telefon</th>
-            <th>Akce</th>
+            <th>Meno</th>
+            <th>Priezvisko</th>
+            <th>Štát</th>
+            <th>Telefón</th>
+            <th>Akcia</th>
         </tr>
 
         <tr th:each="jedenKontakt : ${seznamKontaktu}">
@@ -25,10 +25,19 @@
             <td th:text = "${jedenKontakt.prijmeni}">Malá</td>
             <td th:text = "${jedenKontakt.stat}">Polsko</td>
             <td th:text = "${jedenKontakt.telefonniCislo}">+420 557 589 624</td>
-            <td><a href="http://localhost:8080/ukol04/kontakty/500.html"
-                    th:href="${'http://localhost:8080/ukol04/kontakty/' + jedenKontakt.id + '.html'}">AKCE</a></td>
-
+            <td><a th:href="${'kontakty/' + jedenKontakt.id + '.html'}">Detail</a></td>
         </tr>
+
+        <!--/* -->
+        <tr>
+            <td>3</td>
+            <td>Iva</td>
+            <td>Jará</td>
+            <td>Maďarsko</td>
+            <td>+421 985 654</td>
+            <td>Detail</td>
+        </tr>
+        <!--*/ -->
     </table>
     
 </body>

@@ -12,31 +12,40 @@ import org.springframework.web.servlet.*;
 public class HlavniController {
 
     private static final List<TelefonniKontakt> kontakty = Arrays.asList(
-            new TelefonniKontakt(500L, "Jan", "Cimrman", "Brno", "Cesko", "+420 123 654"),
-            new TelefonniKontakt(501L, "Petr", "Hastrman", "Bratislava", "Slovensko", "+420 123 321"),
-            new TelefonniKontakt(502L, "Izák", "Piloman", "Viden", "Cesko", "+420 123 999")
+            new TelefonniKontakt(500L, "Ada", "Lovelace", "Londýn", "UK", "+44 123 654"),
+            new TelefonniKontakt(501L, "Hypatia", "z Alexandrie", "Alexandria", "Egypt", "+20 123 321"),
+            new TelefonniKontakt(502L, "Mary", "Wollstonecraft", "Hoxton", "UK", "+44 123 999"),
+            new TelefonniKontakt(503L, "Simone", "de Beauvoir", "Paríž", "Francúzsko", "+33 321 879"),
+            new TelefonniKontakt(504L, "Amelia", "Earhart", "Atchison", "USA", "+1 321 987"),
+            new TelefonniKontakt(505L, "Marie", "Skłodowska-Curie", "Varšava", "Poľsko", "+48 321 465"),
+            new TelefonniKontakt(506L, "Marie Zdeňka", "Baborová", "Praha", "Česko", "+420 654 465"),
+            new TelefonniKontakt(507L, "Zora", "Jesenská", "Martin", "Slovensko", "+421 963 465"),
+            new TelefonniKontakt(508L, "Kráľovná", "Nzinga", "Ndongo", "Angola", "+244 963 465"),
+            new TelefonniKontakt(509L, "Sor Juana Inés", "de la Cruz", "San Miguel Nepantla", "Nové Španielsko", "+52 922 465")
     );
 
     @RequestMapping("/kontakty.html")
     public ModelAndView zobrazKontakty(){
-    ModelAndView drzakNaDataAJmenoSablony = new ModelAndView("kontakty");
+        ModelAndView drzakNaDataAJmenoSablony = new ModelAndView("kontakty");
 
-    drzakNaDataAJmenoSablony.addObject("seznamKontaktu", kontakty);
+        drzakNaDataAJmenoSablony.addObject("seznamKontaktu", kontakty);
 
-    return drzakNaDataAJmenoSablony;
-}
+        return drzakNaDataAJmenoSablony;
+    }
 
     @RequestMapping("/kontakty/{id}.html")
-    public ModelAndView zobrazDetail(@PathVariable("id") Long id){
-    ModelAndView drzakNaDataAJmenoSablony2 = new ModelAndView("detail");
-
-    for (int i =0; i < kontakty.size(); i++){
-        TelefonniKontakt kontakt = kontakty.get(i);
-        if (kontakt.getId() == id){
-            drzakNaDataAJmenoSablony2.addObject("jedenKontakt", kontakt);
+    public ModelAndView zobrazDetail(@PathVariable("id") Long idKontaktu) {
+        ModelAndView drzakNaDataAJmenoSablonyKontakt = new ModelAndView("detail");
+        TelefonniKontakt jedenKontakt = null;
+        
+        for (int i = 0; i < kontakty.size(); i++){
+            jedenKontakt = kontakty.get(i);
+            if (jedenKontakt.getId().equals(idKontaktu)){
+                break;
+            }
         }
-    }
-        return drzakNaDataAJmenoSablony2;
+        drzakNaDataAJmenoSablonyKontakt.addObject("jedenKontakt", jedenKontakt);
+        return drzakNaDataAJmenoSablonyKontakt;
     }
 }
 

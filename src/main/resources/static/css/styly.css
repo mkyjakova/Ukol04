@@ -25,37 +25,37 @@ h1 {
 	text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/*pexeso*/
-.pexeso {
-	width: 540px;
-	margin: 50px auto;
-	display: grid;
-	grid-template-columns: repeat(4, 120px);
-	grid-gap: 20px;
-}
 
-.pexeso > * {
-	border: 3px solid rgba(255, 255, 255, 0.6);
-	border-radius: 6px;
-	box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
-	transition: all 0.2s;
-}
-
-.pexeso > *:nth-child(6n+1) { transform: rotate(-2deg); }
-.pexeso > *:nth-child(6n+2) { transform: rotate(3deg); }
-.pexeso > *:nth-child(6n+3) { transform: rotate(-4deg); }
-.pexeso > *:nth-child(6n+4) { transform: rotate(2deg); }
-.pexeso > *:nth-child(6n+5) { transform: rotate(1deg); }
-.pexeso > *:nth-child(6n+6) { transform: rotate(-4deg); }
-
-.pexeso > *:hover {
-	transform: translate(-2px, -2px) scale(1.1);
-	box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.4);
-}
-
-.pexeso img {
+/*detail*/
+p {
+	margin-left: auto;
+	margin-right: auto;
 	display: block;
-	width: 100%;
+	padding: 3px;
+	width: 300px;
+	height: auto;
+}
+
+.img {
+	width: 300px;
+	margin-top: 1px;
+	margin-bottom: 5px;
+	border: 10px solid #FFCCB8;
+	border-radius: 20px;
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.link {
+	margin-top: 5px;
+	color: forestgreen;
+	font-weight: bold;
+	border: 3px solid forestgreen;
+	border-radius: 20px;
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+	margin-left: 30%;
+	margin-right: auto;
+	padding: 3px;
+
 }
 /*tabulka*/
 .tabulka {

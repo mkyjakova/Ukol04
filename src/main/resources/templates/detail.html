@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Detail</title>
@@ -12,23 +12,31 @@
     <table class="tabulka">
         <tr>
             <th>ID</th>
-            <th>Jméno</th>
-            <th>Příjmení</th>
-            <th>Stat</th>
+            <th>Meno</th>
+            <th>Priezvisko</th>
+            <th>Štát</th>
             <th>Mesto</th>
-            <th>Telefon</th>
+            <th>Telefón</th>
         </tr>
 
-        <tr th:each="jedenKontakt : ${seznamKontaktu}">
+        <tr>
             <td th:text = "${jedenKontakt.id}">200</td>
             <td th:text = "${jedenKontakt.jmeno}">Jana</td>
             <td th:text = "${jedenKontakt.prijmeni}">Malá</td>
             <td th:text = "${jedenKontakt.stat}">Polsko</td>
-            <td th:text = "${jedenKontakt.mesto}">Mesto</td>
+            <td th:text = "${jedenKontakt.mesto}">Krakov</td>
             <td th:text = "${jedenKontakt.telefonniCislo}">+420 557 589 624</td>
 
         </tr>
     </table>
+    
+
+    <p>
+        <img class="img" src="../static/images/osobnosti/Ada.jpg"
+             th:src="${'/ukol04/images/osobnosti/' + jedenKontakt.jmeno + '.jpg'}">
+        
+        <a class="link" href="http://toffifee.tomcat.cloud/ukol04/kontakty.html">Späť na zoznam</a>
+    </p>
 
 </body>
 </html>
